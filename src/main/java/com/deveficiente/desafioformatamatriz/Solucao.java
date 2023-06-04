@@ -52,11 +52,7 @@ public class Solucao {
         
         //aqui completa o topo com o que falta
         for(int i = 0; i < limiteColunas - contadorLimiteColunas; i++) {
-            topo.append("+");
-            //codigo gerado pelo copilot
-            for(int j = 0; j < tamanhoCelula; j++) {
-                topo.append("-");
-            }
+            topo.append("+").append(caracteresParaTamanhoCelula);
         }
 
         //codigo gerado pelo copilot
@@ -71,13 +67,7 @@ public class Solucao {
         //esse codigo o copilot pensou antes de mim
         
         for(int i = 0; i < resto; i++) {
-            fundo.append("+");
-
-            //codigo gerado pelo copilot
-            for(int j = 0; j < tamanhoCelula; j++) {
-                fundo.append("-");
-            }
-
+            fundo.append("+").append(caracteresParaTamanhoCelula);
         }
 
         fundo.append("+");
