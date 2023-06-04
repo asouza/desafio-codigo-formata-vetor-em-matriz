@@ -3,14 +3,28 @@ package com.deveficiente.desafioformatamatriz;
 public class Solucao {
 
     public static String formata(int[] vetor, int limiteColunas) {
-        return geraUmaCelula(vetor[0]);            
-    }
+        StringBuilder topo = new StringBuilder();
+        StringBuilder meio = new StringBuilder();
+        StringBuilder fundo = new StringBuilder();
+        /*
+         * 1 - +-+-+
+         * 2 - |4|2|
+         * 3 - +-+-+
+         */
+        
+        
+         
+        for(int numero : vetor){
+            topo.append("+-");
+            meio.append("|"+numero);
+            fundo.append("+-");
+        }
 
-    private static String geraUmaCelula(int numero) {
-        return String.format("""
-+-+
-|%s|
-+-+                
-""",numero);
+        return """
+                %s+
+                %s|
+                %s+
+                """.formatted(topo,meio,fundo)
+        ;
     }
 }

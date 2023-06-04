@@ -19,4 +19,19 @@ public class SolucaoTest {
                                 """,resultado);
     }
 
+    @DisplayName("Deveria formatar a matriz corretamente para o caso de uma linha com dois numeros")
+    @Test
+    public void test2(){
+        String resultado = Solucao
+            .formata(new int[]{4,2},2);
+
+        
+        System.out.println(resultado);   
+        Assertions.assertEquals("""
+                                +-+-+
+                                |4|2|
+                                +-+-+                
+                                """,resultado);                                                
+    }
+
 }
