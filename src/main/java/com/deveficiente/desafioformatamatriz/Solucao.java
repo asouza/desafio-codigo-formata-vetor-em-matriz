@@ -7,30 +7,33 @@ public class Solucao {
         StringBuilder meio = new StringBuilder();
         StringBuilder fundo = new StringBuilder();
         StringBuilder resultado = new StringBuilder();
-        /*
-         * 1 - +-+-+
-         * 2 - |4|2|
-         * 3 - +-+-+
-         */
 
-         /*
-          * """
-                                +-+-+
-                                |4|2|
-                                +-+-+
-                                |3|5|
-                                +-+-+
-                                |7|
-                                +-+\
-                                """
-          */
-        
+        int tamanhoCelula = String.valueOf(vetor[0]).length();
+
+        for(int numero : vetor){
+            tamanhoCelula = Math.max(tamanhoCelula, String.valueOf(numero).length());
+        }
                 
         int contadorLimiteColunas = 0;
 
         for(int posicao = 0; posicao < vetor.length; posicao++) {
-            topo.append("+-");
-            meio.append("|"+vetor[posicao]);
+            topo.append("+");
+
+            //codigo gerado pelo copilot
+            for(int i = 0; i < tamanhoCelula; i++) {
+                topo.append("-");
+            }
+
+            //lado direito foi gerado pelo copilot
+            int diferenca = tamanhoCelula - String.valueOf(vetor[posicao]).length();
+
+            meio.append("|");
+
+            for(int i = 0; i < diferenca; i++) {
+                meio.append(" ");
+            }
+
+            meio.append(vetor[posicao]);
                         
             contadorLimiteColunas++;
 
@@ -47,7 +50,11 @@ public class Solucao {
         
         //aqui completa o topo com o que falta
         for(int i = 0; i < limiteColunas - contadorLimiteColunas; i++) {
-            topo.append("+-");            
+            topo.append("+");
+            //codigo gerado pelo copilot
+            for(int j = 0; j < tamanhoCelula; j++) {
+                topo.append("-");
+            }
         }
 
         //codigo gerado pelo copilot
@@ -62,7 +69,13 @@ public class Solucao {
         //esse codigo o copilot pensou antes de mim
         
         for(int i = 0; i < resto; i++) {
-            fundo.append("+-");
+            fundo.append("+");
+
+            //codigo gerado pelo copilot
+            for(int j = 0; j < tamanhoCelula; j++) {
+                fundo.append("-");
+            }
+
         }
 
         fundo.append("+");

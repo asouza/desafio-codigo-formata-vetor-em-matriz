@@ -110,6 +110,38 @@ public class SolucaoTest {
                                 """,resultado);                                                                                                                          
     }        
 
+    @DisplayName("Deveria formatar a matriz corretamente para o caso de necessidade de n linhas com y elementos sobrando na última e com numero de tamanhos diferentes")
+    @Test
+    public void test8(){
+        String resultado = Solucao
+            .formata(new int[]{40,2,3,5,7},3);
+
+                
+        Assertions.assertEquals("""
+                                +--+--+--+   
+                                |40| 2| 3|
+                                +--+--+--+
+                                | 5| 7|
+                                +--+--+\
+                                """,resultado);                                                                                                                          
+    }            
+
+    @DisplayName("Deveria formatar a matriz corretamente para o caso de necessidade de n linhas com y elementos sobrando na última e com numero de tamanhos diferentes no cenario que eu considero mais complicado")
+    @Test
+    public void test9(){
+        String resultado = Solucao
+            .formata(new int[]{4567,250,30,5,70},3);
+
+                
+        Assertions.assertEquals("""
+                                +----+----+----+   
+                                |4567| 250|  30|
+                                +----+----+----+
+                                |   5|  70|
+                                +----+----+\
+                                """,resultado);                                                                                                                          
+    }                
+
     
 
 }
