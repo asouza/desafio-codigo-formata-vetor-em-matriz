@@ -15,7 +15,7 @@ public class SolucaoTest {
         Assertions.assertEquals("""
                                 +-+
                                 |4|
-                                +-+                
+                                +-+\
                                 """,resultado);
     }
 
@@ -29,7 +29,7 @@ public class SolucaoTest {
         Assertions.assertEquals("""
                                 +-+-+
                                 |4|2|
-                                +-+-+                
+                                +-+-+\
                                 """,resultado);                                                
     }
     @DisplayName("Deveria formatar a matriz corretamente para o caso de uma linha com vários numeros")
@@ -42,7 +42,22 @@ public class SolucaoTest {
         Assertions.assertEquals("""
                                 +-+-+-+-+-+-+-+
                                 |4|2|3|5|6|7|8|
-                                +-+-+-+-+-+-+-+               
+                                +-+-+-+-+-+-+-+\
+                                """,resultado);                                                                                              
+    }
+    @DisplayName("Deveria formatar a matriz corretamente para o caso de necessidade de duas linhas")
+    @Test
+    public void test4(){
+        String resultado = Solucao
+            .formata(new int[]{4,2},1);
+
+                
+        Assertions.assertEquals("""
+                                +-+
+                                |4|
+                                +-+
+                                |2|
+                                +-+\
                                 """,resultado);                                                                                              
     }
 
