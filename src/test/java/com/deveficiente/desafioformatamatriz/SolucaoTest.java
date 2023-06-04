@@ -61,6 +61,40 @@ public class SolucaoTest {
                                 """,resultado);                                                                                              
     }
 
+    @DisplayName("Deveria formatar a matriz corretamente para o caso de necessidade de n linhas exatamente iguais")
+    @Test
+    public void test5(){
+        String resultado = Solucao
+            .formata(new int[]{4,2,3,5},2);
+
+                
+        Assertions.assertEquals("""
+                                +-+-+
+                                |4|2|
+                                +-+-+
+                                |3|5|
+                                +-+-+\
+                                """,resultado);                                                                                              
+    }    
+
+    @DisplayName("Deveria formatar a matriz corretamente para o caso de necessidade de n linhas sobrando na última")
+    @Test
+    public void test6(){
+        String resultado = Solucao
+            .formata(new int[]{4,2,3,5,7},2);
+
+                
+        Assertions.assertEquals("""
+                                +-+-+
+                                |4|2|
+                                +-+-+
+                                |3|5|
+                                +-+-+
+                                |7|
+                                +-+\
+                                """,resultado);                                                                                                                          
+    }        
+
     
 
 }

@@ -12,6 +12,18 @@ public class Solucao {
          * 2 - |4|2|
          * 3 - +-+-+
          */
+
+         /*
+          * """
+                                +-+-+
+                                |4|2|
+                                +-+-+
+                                |3|5|
+                                +-+-+
+                                |7|
+                                +-+\
+                                """
+          */
         
                 
         int contadorLimiteColunas = 0;
@@ -32,9 +44,23 @@ public class Solucao {
                 contadorLimiteColunas = 0;                
             }
         }
+        
+        //aqui completa o topo com o que falta
+        for(int i = 0; i < limiteColunas - contadorLimiteColunas; i++) {
+            topo.append("+-");            
+        }
 
+        //codigo gerado pelo copilot
+        //aqui fecha o topo e o meio
+        if(contadorLimiteColunas > 0) {
+            topo.append("+\n");
+            meio.append("|\n");                
+            resultado.append(topo).append(meio);
+        }
+        
         int resto = vetor.length % limiteColunas;
         //esse codigo o copilot pensou antes de mim
+        
         for(int i = 0; i < limiteColunas - resto; i++) {
             fundo.append("+-");
         }
