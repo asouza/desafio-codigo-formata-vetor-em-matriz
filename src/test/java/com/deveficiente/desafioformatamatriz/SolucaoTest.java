@@ -94,6 +94,21 @@ public class SolucaoTest {
                                 +-+\
                                 """,resultado);                                                                                                                          
     }        
+    @DisplayName("Deveria formatar a matriz corretamente para o caso de necessidade de n linhas com y elementos sobrando na última")
+    @Test
+    public void test7(){
+        String resultado = Solucao
+            .formata(new int[]{4,2,3,5,7},3);
+
+                
+        Assertions.assertEquals("""
+                                +-+-+-+
+                                |4|2|3|
+                                +-+-+-+
+                                |5|7|
+                                +-+-+\
+                                """,resultado);                                                                                                                          
+    }        
 
     
 

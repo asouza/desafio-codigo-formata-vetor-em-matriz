@@ -58,10 +58,10 @@ public class Solucao {
             resultado.append(topo).append(meio);
         }
         
-        int resto = vetor.length % limiteColunas;
+        int resto = contadorLimiteColunas == 0 ? limiteColunas : contadorLimiteColunas;
         //esse codigo o copilot pensou antes de mim
         
-        for(int i = 0; i < limiteColunas - resto; i++) {
+        for(int i = 0; i < resto; i++) {
             fundo.append("+-");
         }
 
