@@ -13,16 +13,18 @@ public class Solucao {
         for(int numero : vetor){
             tamanhoCelula = Math.max(tamanhoCelula, String.valueOf(numero).length());
         }
+
+        //codigo gerado pelo copilot
+        StringBuilder caracteresParaTamanhoCelula = new StringBuilder(tamanhoCelula);
+        for(int i = 0; i < tamanhoCelula; i++) {
+            caracteresParaTamanhoCelula.append("-");
+        }
+        
                 
         int contadorLimiteColunas = 0;
 
         for(int posicao = 0; posicao < vetor.length; posicao++) {
-            topo.append("+");
-
-            //codigo gerado pelo copilot
-            for(int i = 0; i < tamanhoCelula; i++) {
-                topo.append("-");
-            }
+            topo.append("+").append(caracteresParaTamanhoCelula);
 
             //lado direito foi gerado pelo copilot
             int diferenca = tamanhoCelula - String.valueOf(vetor[posicao]).length();
