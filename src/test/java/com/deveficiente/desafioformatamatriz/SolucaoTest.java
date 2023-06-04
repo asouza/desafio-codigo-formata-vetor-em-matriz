@@ -25,13 +25,27 @@ public class SolucaoTest {
         String resultado = Solucao
             .formata(new int[]{4,2},2);
 
-        
-        System.out.println(resultado);   
+                
         Assertions.assertEquals("""
                                 +-+-+
                                 |4|2|
                                 +-+-+                
                                 """,resultado);                                                
     }
+    @DisplayName("Deveria formatar a matriz corretamente para o caso de uma linha com vários numeros")
+    @Test
+    public void test3(){
+        String resultado = Solucao
+            .formata(new int[]{4,2,3,5,6,7,8},7);
+
+                
+        Assertions.assertEquals("""
+                                +-+-+-+-+-+-+-+
+                                |4|2|3|5|6|7|8|
+                                +-+-+-+-+-+-+-+               
+                                """,resultado);                                                                                              
+    }
+
+    
 
 }
